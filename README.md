@@ -221,7 +221,7 @@ echo "<a href='" . wp_login_url( "member_albar" ) . "'>Login</a>";
 Or you can hardcode it in html as:
 
 ```html
-<a href="http://cssauh.com/xc/wordpress/wp-login.php?redirect_to=member_albar">Login</a>
+<a href="/wp-login.php?redirect_to=member_albar">Login</a>
 ```
 
 ### 6) Disable "Comments" on a WordPress blog page.
