@@ -1,16 +1,7 @@
 <?php
 require("../wp-load.php");
 
-//define('WP_USE_THEMES', false);
-//require('../wp-blog-header.php');
-//include("../wp-content/themes/albar/header.php");
 get_header();
-//include_once("../wp-includes/admin-bar.php");
-//show_admin_bar( true );
-//echo is_admin_bar_showing(); // 1
-//echo function_exists("show_admin_bar"); // 1
-//get_sidebar();
-//get_template_part('pageheader');
 ?>
 
 <style type="text/css">

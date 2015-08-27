@@ -1,17 +1,8 @@
 <?php
 require("../wp-load.php");
 
-//define('WP_USE_THEMES', false);
-//require('../wp-blog-header.php');
-//include("../wp-content/themes/albar/header.php");
 get_header();
-//include_once("../wp-includes/admin-bar.php");
-//show_admin_bar( true );
-//echo is_admin_bar_showing(); // 1
-//echo function_exists("show_admin_bar"); // 1
-//get_template_part('pageheader');
 ?>
-
 
 
 <div id="main-content" class="main-content">
@@ -29,8 +20,6 @@ if (is_user_logged_in()){
 }
 else {
     echo "<p>Welcome, visitor!</p>";
-    // header( 'Location: http://www.mysite.com/blog/wp-login.php' ) ;
-    //echo "<a href='../wp-login.php'>Login</a> | <a href='../wp-login.php?action=register'>Register</a>";
     echo "<a href='" . wp_login_url( "member_2014" ) . "' title='Login'>Login</a> | <a href='../wp-login.php?action=register'>Register</a>";
 };
 ?>
