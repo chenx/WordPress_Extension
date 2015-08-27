@@ -1,0 +1,7 @@
+README
+------
+
+In index.php, on line 20, <article> width is 100% of entire page.
+
+But on line 26, <div class="entry-content"> has limited width. 
+To use entire width, remove class "entry-content".

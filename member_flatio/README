@@ -1,0 +1,7 @@
+README
+------
+
+To disable sidebar in index.php:
+
+1) on line 53, comment out "get_sidebar();"
+2) on line 20, add "width: 100%;" to style of section if you want the content to span entire width.

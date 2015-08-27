@@ -1,0 +1,12 @@
+README
+------
+
+To disable sidebar in index.php:
+
+1) on line 91, comment out "get_sidebar();".
+2) on line 73, add "width: 100%;" to <div id="primary">.
+
+Another way to use 1-column or 2-column:
+
+- copy index1.php to index.php to use 1-column.
+- copy index2.php to index.php to use 2-column.
