@@ -8,6 +8,8 @@ WordPress is a popular blogging software. It has a lot of nice-looking themes. I
 
 This project aims to extend WordPress as a general website framework. It reuses WordPress's membership/login system, role system, and themes. It then provide logged-in user page templates for different themes. Logged-in user page templates use current theme's header and footer, get logged-in user's identity and profile from WordPress built-in API, thus allow creating any custom pages and functions.
 
+This project is based on WordPress version 4.3.
+
 
 Issues to address
 =================
