@@ -111,7 +111,7 @@ function showUserInfo() {
 
 This is easily done by including functions get_header() and get_footer().
 
-Thus a minimal complete page template is:
+Thus a minimal page template is:
 
 ```php
 <?php
@@ -119,7 +119,6 @@ $SITE_ROOT = ".."; // change this accordingly.
 
 require("$SITE_ROOT/wp-load.php");
 get_header();
-
 
 if (is_user_logged_in()){
     echo "<p>Welcome, registered user!</p>";
@@ -130,7 +129,6 @@ else {
     echo "<a href='$SITE_ROOT/wp-login.php'>Login</a>";
     echo " | <a href='$SITE_ROOT/wp-login.php?action=register'>Register</a>";
 };
-
 
 get_footer();
 
