@@ -190,7 +190,7 @@ Note that if you do not use sidebar, the content div may not span the entire pag
 
 The Admin_bar (Toolbar) is a dark bar at the top of page, which provides nagivation to WordPress functions (Site dashboard and navigation, post functions etc.) and current user functions (links to profile, logout). It is independent from themes, and is built-in WordPress. 
 
-For me, since a custom page does not need many of WordPress' build in functions, I extracted the Admin_bar's source code, modified it and stored it in theme template folders. That is the admin_bar.php file in this project's templates.
+For me, since a custom page does not need many of WordPress' built in functions, I extracted the Admin_bar's source code, modified it and stored it in theme template folders. That is the admin_bar.php file in this project's templates.
 admin_bar.php is included in the index.php template file.
 
 The Admin_bar will appear on every page one the user is logged in. If you have your customized navigation, and do not want Admin_bar, you can disable it and make it disappear by this:
@@ -347,9 +347,9 @@ References
 [11] http://stackoverflow.com/questions/8413560/wordpress-add-custom-roles-as-well-as-remove-default-roles  
 [12] http://www.wpmayor.com/roles-capabilities-wordpress/   
 [13] http://codex.wordpress.org/Theme_Development  
-[14] https://wordpress.org/plugins/miniorange-login-openid/
-[15] http://stackoverflow.com/questions/507138/how-do-i-add-a-class-to-a-given-element
+[14] https://wordpress.org/plugins/miniorange-login-openid/  
+[15] http://stackoverflow.com/questions/507138/how-do-i-add-a-class-to-a-given-element  
 [16] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page  
-[17] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+[17] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet  
 
 
