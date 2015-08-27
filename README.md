@@ -224,13 +224,15 @@ Or you can hardcode it in html as:
 <a href="/wp-login.php?redirect_to=member_albar">Login</a>
 ```
 
-### 6) Disable "Comments" on a WordPress blog page.
+### 6) Disable "Comment" on a WordPress blog page.
 
 If you use a WordPress blog post as "About" or similar page, you can disable the page's comment function by:
 
 On Edit Page, click Screen Options and check the Discussion box. Then in Discussion section, uncheck "Allow comments". 
 
-### 7) To customize default user registeration email, see [4]. 
+### 7) Customize user register confirmation email.
+
+See [4]. 
 
 
 Implementation: Create new templates
