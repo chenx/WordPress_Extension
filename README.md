@@ -27,7 +27,48 @@ How-to
 1) Create custom roles
 ----------------------
 
+For WordPress roles system, see [7-12]. Basically, there are 6 built-in roles.
+
 In order to create custom roles, install the Members plugin [5].
+
+However, there is a limitation that each user is restricted to just one role. In a more flexible design, such as in the ASP.NET membership/role/profile system, there is a user table, a role table, and a user_role table joining the two, which allows a user to have multiple roles. A possible fix is to create custom role table and user_role table, thus implementing this capability oneself.
+
+2) Check user login status, and obtain user profile
+---------------------------------------------------
+
+In order to use WordPress built-in API, just include the "wp_load.php" file:
+
+```php
+require($SITE_ROOT . "/wp-load.php");
+```
+
+Then you can access if a user is logged in by the function is_user_logged_in():
+
+```php
+if (is_user_logged_in()){
+    showUserInfo();
+}
+```
+
+Next, to access user identity and profile, use the global $current_user variable:
+
+```php
+function showUserInfo() {
+    global $current_user;
+    if ( isset($current_user) ) {
+        echo "Login: " . $current_user->user_login . "<br/>";
+        echo "ID: " . $current_user->ID . "<br/>";
+        echo "Firstname: " . $current_user->user_firstname . '<br/>';
+        echo "Email: " . $current_user->user_email . "<br/>";
+        echo "Caps[\"administrator\"]: " . $current_user->caps["administrator"] . "<br/>";
+        echo "<br/>";
+        echo "var_dump(\$current_user):<br/>";
+        echo "<br/>";
+        var_dump($current_user); // this shows all available user profile variables.
+    }
+}
+```
+
 
 
 Summary
@@ -62,6 +103,6 @@ References
 [9] http://stackoverflow.com/questions/12992650/wordpress-plugin-for-authentication-and-authorization  
 [10] http://www.paulund.co.uk/handling-wordpress-user-roles  
 [11] http://stackoverflow.com/questions/8413560/wordpress-add-custom-roles-as-well-as-remove-default-roles  
-[12] http://www.wpmayor.com/roles-capabilities-wordpress/   <====
+[12] http://www.wpmayor.com/roles-capabilities-wordpress/   
 [13] http://codex.wordpress.org/Theme_Development  
 [14] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page  
