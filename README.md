@@ -4,13 +4,13 @@ Extension to customize WordPress for MIS development.
 About
 =====
 
-This project aims to extend WordPress as a general website framework. It makes use of WordPress's membership/login system, role system, and themes. It then provide member homepage templates for different themes. Member homepages are user defined custom php pages that uses current theme's header and footer, gets current user's identity and profile from WordPress built-in API, thus allowing creating any custom pages and functions.
-
-
-Movitation
-==========
-
 WordPress is a popular blogging software. It has a lot of nice-looking themes. If it can be used as website framework, then we can instantly make use of it abundant themes and avoid doing a lot of user interface work.
+
+This project aims to extend WordPress as a general website framework. It reuses WordPress's membership/login system, role system, and themes. It then provide logged-in user page templates for different themes. Logged-in user page templates use current theme's header and footer, get logged-in user's identity and profile from WordPress built-in API, thus allow creating any custom pages and functions.
+
+
+Issues to address
+=================
 
 For this purpose, one should be able to create custom roles (user groups), members of such roles may or may not be able to post blogs, but can access custom pages once log in. Several things are crucial:
 
