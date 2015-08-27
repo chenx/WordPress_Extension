@@ -272,6 +272,15 @@ $(document).ready(function() {
 </script>
 ```
 
+Or you could add the classes in pure javascript [15]:
+
+```html
+<script type="text/javascript">
+    document.body.className += " page page-id-2 page-template-default";
+    // or document.body.classList.add("page page-id-2 page-template-default")
+</script>
+```
+
 
 Future work
 ===========
@@ -339,7 +348,8 @@ References
 [12] http://www.wpmayor.com/roles-capabilities-wordpress/   
 [13] http://codex.wordpress.org/Theme_Development  
 [14] https://wordpress.org/plugins/miniorange-login-openid/
-[14] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page  
-[15] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+[15] http://stackoverflow.com/questions/507138/how-do-i-add-a-class-to-a-given-element
+[16] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page  
+[17] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 
