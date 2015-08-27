@@ -1,5 +1,5 @@
 # WordPress_Extension
-Extension to customize WordPress for MIS development.
+Extension to customize WordPress as website framework.
 
 About
 =====
