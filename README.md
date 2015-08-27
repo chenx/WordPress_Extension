@@ -6,8 +6,23 @@ About
 
 This project aims to extend WordPress as a general website framework. It makes use of WordPress's membership/login system, role system, and themes. It then provide member homepage templates for different themes. Member homepages are user defined custom php pages that uses current theme's header and footer, gets current user's identity and profile from WordPress built-in API, thus allowing creating any custom pages and functions.
 
-Usage
-=====
+
+Movitation
+==========
+
+WordPress is a popular blogging software. It has a lot of nice-looking themes. If it can be used as website framework, then we can instantly make use of it abundant themes and avoid doing a lot of user interface work.
+
+For this purpose, one should be able to create custom roles (user groups), members of such roles may or may not be able to post blogs, but can access custom pages once log in. Several things are crucial:
+
+1) create custom role(s).  
+2) check if a user is logged in, and access user profile such as ID, login name, user name, email, user type. Based on this, one can add custom database tables and build whatever function that is desired.  
+3) make use of WordPress theme in custom page.  
+
+A study on these requirements proves fruitful. Over the past week, I was able to build a member page for 7 WordPress themes. It's very easy to extend to more themes, by taking from ten minutes to one hour.
+
+
+How to use templates in this project
+====================================
 
 The projects contains a series of folders member_[theme]. Each folder is for a different theme. Right now the available themes include:
 
@@ -40,22 +55,8 @@ In order to use the templates, follow these steps:
 That's all.
 
 
-Movitation
-==========
-
-WordPress is a popular blogging software. It has a lot of nice-looking themes. If it can be used as website framework, then we can instantly make use of it abundant themes and avoid doing a lot of user interface work.
-
-For this purpose, one should be able to create custom roles (user groups), members of such roles may or may not be able to post blogs, but can access custom pages once log in. Several things are crucial:
-
-1) create custom role(s).  
-2) check if a user is logged in, and access user profile such as ID, login name, user name, email, user type. Based on this, one can add custom database tables and build whatever function that is desired.  
-3) make use of WordPress theme in custom page.  
-
-A study on these requirements proves fruitful. Over the past week, I was able to build a member page for 7 WordPress themes. It's very easy to extend to more themes, by taking from ten minutes to one hour.
-
-
-How-to Basics
-=============
+Implementation: Basics
+======================
 
 This section introduces the basics of the basics, by answer the three questions above, on how to make the minimal functions work.
 
@@ -150,8 +151,8 @@ function showUserInfo() {
 ```
 
 
-How-to More Details
-===================
+Implementation: More Details
+============================
 
 After readnig the above section, you can make the basics work. But the custom page will still be very different from other pages in WordPress. For example, the content layout is totally different, or how about the sidebar?
 
@@ -201,6 +202,45 @@ show_admin_bar(false);
 ```
 
 There are abundant online document for more details on this.
+
+
+Implementation: Create new templates
+====================================
+
+Now you want to roll out templates for your desired themes, the following are instructions and tips on how.
+
+First of all, you can copy an existing template in this project, and start from it.
+
+Second, different themes will use different page layouts. You can find out by checking a) /wp-content/themes/[theme_directory]/page.php, or b) an example page of this theme. Then you apply these to your index.php and admin_bar.php. This can include the specific javascript and css files for your theme, and page div's for your theme's page layout.
+
+More tweaking may be needed sometimes. 
+
+For example, a blog page of WordPress may contain this body tag:
+
+```html
+<body class="page page-id-2 page-template-default logged-in admin-bar no-customize-support">
+```
+
+But for your custom page, the body tag will be like this (generated in get_header() function):
+
+```html
+<body class="logged-in admin-bar no-customize-support">
+```
+
+Missing 3 classes "page", "page-id-2", "page-template-default" may or may not produce user interface difference. If they do, you may either find out those missing css definitions and include them in your index.php, or you may want to include the code below to trigger the css changes after the page is loaded:
+
+```html
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    // Note probably not all classes are needed, so test and comment out unnecessary ones.
+    $('body').addClass('page');
+    $('body').addClass('page-id-2');
+    $('body').addClass('page-template-default');
+    $('body').addClass('body');
+});
+</script>
+```
 
 
 Summary
