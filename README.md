@@ -21,6 +21,11 @@ For this purpose, one should be able to create custom roles (user groups), membe
 A study on these requirements proves fruitful. Over the past week, I was able to build a member page for 7 WordPress themes. It's very easy to extend to more themes, by taking from ten minutes to one hour.
 
 
+How-to
+======
+
+Create custom roles
+---------------------
 
 
 Summary
@@ -49,4 +54,4 @@ References
  - http://www.wpbeginner.com/beginners-guide/how-to-allow-user-registration-on-your-wordpress-site/
  - https://wordpress.org/plugins/welcome-email-editor/
  - https://wordpress.org/plugins/members/
- - wordpress - redirect to target page after log in 
+ - <a href="http://codex.wordpress.org/Function_Reference/wp_login_url">wordpress - redirect to target page after log in</a> 
