@@ -233,8 +233,8 @@ On Edit Page, click Screen Options and check the Discussion box. Then in Discuss
 ### 7) To customize default user registeration email, see [4]. 
 
 
-Implementation: Create new templates
-====================================
+Implementation: Create new theme templates
+==========================================
 
 Now you want to roll out templates for your desired themes, the following are instructions and tips on how.
 
