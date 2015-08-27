@@ -258,7 +258,7 @@ But for your custom page, the body tag will be like this (generated in get_heade
 <body class="logged-in admin-bar no-customize-support">
 ```
 
-Missing 3 classes "page", "page-id-2", "page-template-default" may or may not produce user interface difference. If they do, you may either find out those missing css definitions and include them in your index.php, or you may want to include the code below to trigger the css changes after the page is loaded:
+Missing 3 classes "page", "page-id-2", "page-template-default" may or may not produce user interface difference. If they do, you may either find out those missing css definitions and include them in your index.php, or you may want to include the code below at the end of index.php, to trigger css changes after the page is loaded:
 
 ```html
 <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
