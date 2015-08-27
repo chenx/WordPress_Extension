@@ -230,7 +230,7 @@ If you use a WordPress blog post as "About" or similar page, you can disable the
 
 On Edit Page, click Screen Options and check the Discussion box. Then in Discussion section, uncheck "Allow comments". 
 
-### 7) To change default user registeration email, see [4]. 
+### 7) To customize default user registeration email, see [4]. 
 
 
 Implementation: Create new templates
@@ -272,8 +272,25 @@ $(document).ready(function() {
 ```
 
 
+Future work
+===========
+
+More considerations can include:
+
+- Use a "Login" link instead of "Member".
+  - Issue: but then since the WordPress menu keeps the same after logged in, how to hide/change the "Login" text?
+- Use of multi-level menu.
+- Customize register email.
+- Hide Admin_bar, then how to provide custom nagivation alternative?
+- How to allow social media register?
+  - [14] seems to provide some clue, but needs more investigation.
+
+
+
 Summary
 =======
+
+This project:
 
  - Shows how to check if a user is logged in, and retrieval user information.
  - Shows how to include header/footer of current theme.
@@ -306,6 +323,7 @@ References
 [11] http://stackoverflow.com/questions/8413560/wordpress-add-custom-roles-as-well-as-remove-default-roles  
 [12] http://www.wpmayor.com/roles-capabilities-wordpress/   
 [13] http://codex.wordpress.org/Theme_Development  
+[14] https://wordpress.org/plugins/miniorange-login-openid/
 [14] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page  
 [15] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
