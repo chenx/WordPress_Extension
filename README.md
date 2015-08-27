@@ -6,6 +6,39 @@ About
 
 This project aims to extend WordPress as a general website framework. It makes use of WordPress's membership/login system, role system, and themes. It then provide member homepage templates for different themes. Member homepages are user defined custom php pages that uses current theme's header and footer, gets current user's identity and profile from WordPress built-in API, thus allowing creating any custom pages and functions.
 
+Usage
+=====
+
+The projects contains a series of folders member_[theme]. Each folder is for a different theme. Right now the available themes include:
+
+- albar
+- bubbly
+- flatio
+- klean
+- twenty thirteen
+- twenty fourteen
+- twenty fifteen
+
+Albar is the theme that I started with this project. Therefore it contains more files than the rest. The other theme template folders contain:
+
+- index.php 
+- admin_bar.php
+- (optional) README
+
+But the albar theme template folder contains more files for development and experiment purposes.
+
+In order to use the templates, follow these steps:
+
+- Copy the theme template folder(s) to your WordPress installation root  
+- In WordPress dashboard, go to Appearance -> themes, active your theme, say "albar".  
+- In WordPress dashboard, go to Appearance -> Menus, in "Custom Links" panel, create a new link: 
+  - URL: [site_url]/member_albar, Link Text: "Member"
+  - this will appear in the "Menu Structure" panel.
+  - Note: if the "Member" link already exists, you can just update its URL.
+- Now visit your WordPress homepage, click on "Member" link, it'll bring you to the custom page.
+
+That's all.
+
 
 Movitation
 ==========
@@ -21,8 +54,10 @@ For this purpose, one should be able to create custom roles (user groups), membe
 A study on these requirements proves fruitful. Over the past week, I was able to build a member page for 7 WordPress themes. It's very easy to extend to more themes, by taking from ten minutes to one hour.
 
 
-How-to
-======
+How-to Basics
+=============
+
+This section introduces the basics of the basics, by answer the three questions above, on how to make the minimal functions work.
 
 1) Create custom roles
 ----------------------
@@ -89,7 +124,8 @@ if (is_user_logged_in()){
 }
 else {
     echo "<p>Welcome, visitor!</p>";
-    echo "<a href='$SITE_ROOT/wp-login.php'>Login</a> | <a href='$SITE_ROOT/wp-login.php?action=register'>Register</a>";
+    echo "<a href='$SITE_ROOT/wp-login.php'>Login</a>";
+    echo " | <a href='$SITE_ROOT/wp-login.php?action=register'>Register</a>";
 };
 
 
@@ -111,9 +147,60 @@ function showUserInfo() {
     }
 }
 ?>
-
-
 ```
+
+
+How-to More Details
+===================
+
+After readnig the above section, you can make the basics work. But the custom page will still be very different from other pages in WordPress. For example, the content layout is totally different, or how about the sidebar?
+
+This section introduces more details on how to make the nuts-and-bots work. 
+
+### 1) Page layout
+
+To make your custom page template user interface matching other pages of the current theme, in general, you will need to tweak the template html/css a bit.
+
+There are two places you can look for help.
+
+a) /wp-content/themes/[theme_directory]/page.php   
+The page.php file contains the basic layout of a page of the current theme. 
+
+b) The default first blog page.    
+Check the source code of the page.
+
+
+### 2) Sidebar
+
+You may or may not want to include the sidebar for your custom page. Many of the time you want to use the entire space estate for custom functions and do not need the sidebar.
+
+However, if you want to include sidebar, you can simply use:
+
+```php
+get_sidebar();
+```
+
+But the location of calling the function will depend on the specific theme. 
+
+Note that if you do not use sidebar, the content div may not span the entire page width. To make the content div wider, you can add attribute "style='width:100%;'" to the content div.
+
+
+### 3) Admin_bar (Toolbar)
+
+The Admin_bar (Toolbar) is a dark bar at the top of page, which provides nagivation to WordPress functions (Site dashboard and navigation, post functions etc.) and current user functions (links to profile, logout). It is independent from themes, and is built-in WordPress. 
+
+For me, since a custom page does not need many of WordPress' build in functions, I extracted the Admin_bar's source code, modified it and stored it in theme template folders. That is the admin_bar.php file in this project's templates.
+admin_bar.php is included in the index.php template file.
+
+The Admin_bar will appear on every page one the user is logged in. If you have your customized navigation, and do not want Admin_bar, you can disable it and make it disappear by this:
+
+In /wp-content/themes/[theme_directory]/function.php, add this to the end of the file:
+
+```php
+show_admin_bar(false);
+```
+
+There are abundant online document for more details on this.
 
 
 Summary
