@@ -4,11 +4,11 @@ Extension to customize WordPress as website framework.
 About
 =====
 
-WordPress is a popular blogging software. It has a lot of nice-looking themes. If it can be used as website framework, then we can instantly make use of it abundant themes and avoid doing a lot of user interface work.
+WordPress is a popular blogging software. It has a lot of nice-looking themes. If it can be used as website framework, then we can instantly take advantage of its versatile themes.
 
-This project aims to extend WordPress as a general website framework in a non-invasive way. It reuses WordPress's membership/login system, role system, and themes. It then provides logged-in user page templates for different themes. Logged-in user page templates use current theme's header and footer, get logged-in user's identity and profile from WordPress built-in API, thus allow creating any custom pages and functions.
+This project aims to extend WordPress as a general website framework in a non-invasive way. It reuses WordPress's membership/login system, role system, and themes. It provides member (logged-in user) page templates for different themes. Member page templates use current theme's header and footer, get member's identity and profile from WordPress's built-in API, thus allowing the creation of any custom functions.
 
-This project is based on WordPress version 4.3.
+This project is developed under WordPress 4.3.
 
 
 Issues to address
