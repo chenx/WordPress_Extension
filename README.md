@@ -268,7 +268,6 @@ $(document).ready(function() {
     $('body').addClass('page');
     $('body').addClass('page-id-2');
     $('body').addClass('page-template-default');
-    $('body').addClass('body');
 });
 </script>
 ```
