@@ -24,8 +24,10 @@ A study on these requirements proves fruitful. Over the past week, I was able to
 How-to
 ======
 
-Create custom roles
----------------------
+1) Create custom roles
+----------------------
+
+In order to create custom roles, install the Members plugin [5].
 
 
 Summary
@@ -49,9 +51,17 @@ Summary
 References
 ===========
 
- - http://codex.wordpress.org/Function_Reference/wp_get_current_user
- - https://web-design-weekly.com/snippets/load-a-different-header-in-wordpress/
- - http://www.wpbeginner.com/beginners-guide/how-to-allow-user-registration-on-your-wordpress-site/
- - https://wordpress.org/plugins/welcome-email-editor/
- - https://wordpress.org/plugins/members/
- - <a href="http://codex.wordpress.org/Function_Reference/wp_login_url">wordpress - redirect to target page after log in</a> 
+[1] http://codex.wordpress.org/Function_Reference/wp_get_current_user  
+[2] https://web-design-weekly.com/snippets/load-a-different-header-in-wordpress/  
+[3] http://www.wpbeginner.com/beginners-guide/how-to-allow-user-registration-on-your-wordpress-site/  
+[4] https://wordpress.org/plugins/welcome-email-editor/  
+[5] https://wordpress.org/plugins/members/  
+[6] <a href="http://codex.wordpress.org/Function_Reference/wp_login_url">wordpress - redirect to target page after log in</a>  
+[7] https://codex.wordpress.org/Roles_and_Capabilities  
+[8] http://torquemag.io/5-wordpress-plugins-manage-user-roles/  
+[9] http://stackoverflow.com/questions/12992650/wordpress-plugin-for-authentication-and-authorization  
+[10] http://www.paulund.co.uk/handling-wordpress-user-roles  
+[11] http://stackoverflow.com/questions/8413560/wordpress-add-custom-roles-as-well-as-remove-default-roles  
+[12] http://www.wpmayor.com/roles-capabilities-wordpress/   <====
+[13] http://codex.wordpress.org/Theme_Development  
+[14] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page  
