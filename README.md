@@ -203,6 +203,35 @@ show_admin_bar(false);
 
 There are abundant online document for more details on this.
 
+### 4) Allow user to register
+
+By default WordPress does not allow user register, only admin can add user.
+
+To enable user register, go to WordPress dashboard -> "Settings" -> "General", and check "Membership: Anyone can register".
+
+
+### 5) Customize default redirect after login.
+
+By default, after log into WordPress, the user is redirected to dashboard. When you provide Login link on "Member" page, and want the user to redirected to the Member page once logged in, you can do this:
+
+```php
+echo "<a href='" . wp_login_url( "member_albar" ) . "'>Login</a>";
+```
+
+Or you can hardcode it in html as:
+
+```html
+<a href="http://cssauh.com/xc/wordpress/wp-login.php?redirect_to=member_albar">Login</a>
+```
+
+### 6) Disable "Comments" on a WordPress blog page.
+
+If you use a WordPress blog post as "About" or similar page, you can disable the page's comment function by:
+
+On Edit Page, click Screen Options and check the Discussion box. Then in Discussion section, uncheck "Allow comments". 
+
+### 7) To change default user registeration email, see [4]. 
+
 
 Implementation: Create new templates
 ====================================
@@ -278,3 +307,6 @@ References
 [12] http://www.wpmayor.com/roles-capabilities-wordpress/   
 [13] http://codex.wordpress.org/Theme_Development  
 [14] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page  
+[15] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+
+
