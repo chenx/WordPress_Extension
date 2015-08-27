@@ -69,6 +69,51 @@ function showUserInfo() {
 }
 ```
 
+3) Use WordPress theme in custom page.
+
+This is easily done by including functions get_header() and get_footer().
+
+Thus a minimal complete page template is:
+
+```php
+<?php
+$SITE_ROOT = ".."; // change this accordingly.
+
+require("$SITE_ROOT/wp-load.php");
+get_header();
+
+
+if (is_user_logged_in()){
+    echo "<p>Welcome, registered user!</p>";
+    showUserInfo();
+}
+else {
+    echo "<p>Welcome, visitor!</p>";
+    echo "<a href='$SITE_ROOT/wp-login.php'>Login</a> | <a href='$SITE_ROOT/wp-login.php?action=register'>Register</a>";
+};
+
+
+get_footer();
+
+
+function showUserInfo() {
+    global $current_user;
+    if ( isset($current_user) ) {
+        echo "Login: " . $current_user->user_login . "<br/>";
+        echo "ID: " . $current_user->ID . "<br/>";
+        echo "Firstname: " . $current_user->user_firstname . '<br/>';
+        echo "Email: " . $current_user->user_email . "<br/>";
+        echo "Caps[\"administrator\"]: " . $current_user->caps["administrator"] . "<br/>";
+        echo "<br/>";
+        echo "var_dump(\$current_user):<br/>";
+        echo "<br/>";
+        var_dump($current_user);
+    }
+}
+?>
+
+
+```
 
 
 Summary
