@@ -307,6 +307,20 @@ This project:
  - Note: to customize page title, see wp-includes/post-template.php function get_the_title().
 
 
+License
+=======
+
+Apache/BSD/MIT/GPLv2
+
+
+Author
+======
+
+X. Chen  
+Created On: August 2015  
+Last Modified: August 2015  
+
+
 References
 ===========
 
