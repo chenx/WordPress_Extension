@@ -336,6 +336,12 @@ Miscellaneous Stuff
 - User role is stored in wp_usermeta as wp_user_level, with a value from 0 to 10.
   - Another relevant field is in table wp_options: wp_options.wp_user_roles
 
+- To change theme template, go to /wp-content/themes/[theme].
+  - To change homepage, modify home.phhp
+  - To change header/footer, modify header.php and footer.php
+  - For page layout, check page.php
+  - For more about a theme, read README.txt
+
 
 Future work
 ===========
