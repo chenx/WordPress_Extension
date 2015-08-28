@@ -277,7 +277,10 @@ Or you could add the classes in pure javascript [15]:
 ```html
 <script type="text/javascript">
     document.body.className += " page page-id-2 page-template-default";
-    // or document.body.classList.add("page page-id-2 page-template-default")
+    // or this:
+    // document.body.classList.add("page");
+    // document.body.classList.add("page-id-2");
+    // document.body.classList.add("page-template-default");
 </script>
 ```
 
