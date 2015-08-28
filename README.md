@@ -365,6 +365,11 @@ Add the script before the close body tag. That's all.
   - In theory you can do anything with the menu here.
   - If using this menu, then you can disable WordPress menu.
     - in dashboard, Appearance -> Menus -> Menu Structure, and click on "Delete Menu".
+
+- Customize user register confirmation email
+  - can change /wordpress/wp-includes/pluggable.php function wp_new_user_notification(). See [18].
+  - for multiple site, seems should use: wpmu_signup_user_notification [18]
+  - there are also some plugins to customize email format, like in nice html format.
   
 
 
@@ -380,7 +385,6 @@ More considerations:
   - If use custom menu as in "Misc Stuff" above, this is not a problem.
 - Hide Admin_bar, then how to provide custom nagivation alternative?
   - If use custom menu as in "Misc Stuff" above, this is not a problem.
-- Customize register email.
 - How to allow social media register?
   - [14] seems to provide some clue, but needs more investigation.
 
@@ -436,10 +440,11 @@ References
 [11] http://stackoverflow.com/questions/8413560/wordpress-add-custom-roles-as-well-as-remove-default-roles  
 [12] http://www.wpmayor.com/roles-capabilities-wordpress/   
 [13] http://codex.wordpress.org/Theme_Development  
-[14] https://wordpress.org/plugins/miniorange-login-openid/  
-[15] http://stackoverflow.com/questions/507138/how-do-i-add-a-class-to-a-given-element  
-[16] http://wordpress.org/support/topic/moving-wordpress-to-another-folder
-[17] http://jiathis.com/
+[14] https://wordpress.org/plugins/miniorange-login-openid/   
+[15] http://stackoverflow.com/questions/507138/how-do-i-add-a-class-to-a-given-element   
+[16] http://wordpress.org/support/topic/moving-wordpress-to-another-folder   
+[17] http://jiathis.com/   
+[18] http://wordpress.stackexchange.com/questions/15304/how-to-change-the-default-registration-email-plugin-and-or-non-plugin
 [18] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page  
 [19] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet  
 
