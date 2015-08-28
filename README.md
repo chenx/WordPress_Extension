@@ -285,19 +285,111 @@ Or you could add the classes in pure javascript [15]:
 ```
 
 
+Misc Stuff
+==========
+
+- WordPress configurations are in: /wp-config.php
+  - from here you can get database name/user/password etc.
+
+- WordPress database tables are named as: wp_[table_name].
+  - it could be like wp_[key]_[table_name], e.g., on a bluehost installation.
+
+- WordPress tables include:
+
+ | Tables_in_wordpress (total 11)  |
+ |---------------------------------|
+ | wp_commentmeta             |
+ | wp_comments                |
+ | wp_links                   |
+ | wp_options                 |
+ | wp_postmeta                |
+ | wp_posts                   |
+ | wp_term_relationships      |
+ | wp_term_taxonomy           |
+ | wp_terms                   |
+ | wp_usermeta                |
+ | wp_users                   |
+
+- WordPress options are stored in wp_options.
+
+- A theme is stored in wp_options like this:  
+
+ | option_id | option_name      | option_value             | autoload |
+ |-----------|------------------|--------------------------|----------|
+ |       165 | theme_mods_albar |  (see below for value)   | yes      |
+  
+  - where option_value is like: a:2:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:7:"primary";i:2;s:9:"main-menu";i:2;}}
+
+- wp_options rows relevant to theme are:
+
+ | option_name                   |
+ |-------------------------------|
+ | template                      |
+ | stylesheet                    |
+ | _site_transient_theme_roots   |
+ | current_theme                 |
+ | _site_transient_update_themes |
+
+  - template, sytelsheet and current_theme values are the name of the current theme.
+
+- Users are stored in wp_users. 
+
+- User role is stored in wp_usermeta as wp_user_level, with a value from 0 to 10.
+  - Another relevant field is in table wp_options: wp_options.wp_user_roles
+
+- To change theme template, go to /wp-content/themes/[theme].
+  - To change homepage, modify home.php
+  - To change header/footer, modify header.php and footer.php
+  - For page layout, check page.php
+  - For more about a theme, read README.txt
+
+- Move WordPress to another folder.
+
+  There is no need to backup entire site and move things. A simple, light-weight procedure is [16]:
+
+  1. Go to admin panel: Settings > General
+  2. Change the two URI addresses, click on "Save Changes". This will show an error page, but it's fine.
+  3. Open your SSH/FTP client (or other site admin tool) and move the WP folder
+  4. Now open your blog at the new location, go to Settings > General, click on "Save Changes".
+  5. Go to Settings > Permalinks, click on "Save Changes", this is supposed to recreate all .htaccess rules.
+
+- Add social media share function. 
+
+  The simple script to insert for the sharing panel can be obtained from [17]. It just needs to insert this script anywhere between the body tags in your site.
+
+  Say you are using the twenty twelve theme, just edit this file: /wp-content/themes/twentytwelve/footer.php
+Add the script before the close body tag. That's all.
+
+- Add custom menu
+  - One way is to modify /wp-content/themes/[theme]/header.php, and add custom menu here. 
+  - In theory you can do anything with the menu here.
+  - If using this menu, then you can disable WordPress menu.
+    - in dashboard, Appearance -> Menus -> Menu Structure, and click on "Delete Menu".
+
+- Customize user register email
+  - can change /wordpress/wp-includes/pluggable.php function wp_new_user_notification(). See [18].
+  - for multiple site, seems should use: wpmu_signup_user_notification [18]
+  - there are also some plugins to customize email format, like in nice html format.
+  
+
+
 Future work
 ===========
 
-More considerations can include:
+More considerations:
 
+- Use of multi-level menu.
+  - One way is in "Misc Stuff" above.
 - Use a "Login" link instead of "Member".
   - Issue: but then since the WordPress menu keeps the same after logged in, how to hide/change the "Login" text?
-- Use of multi-level menu.
-- Customize register email.
+  - If use custom menu as in "Misc Stuff" above, this is not a problem.
 - Hide Admin_bar, then how to provide custom nagivation alternative?
+  - If use custom menu as in "Misc Stuff" above, this is not a problem.
 - How to allow social media register?
   - [14] seems to provide some clue, but needs more investigation.
-
+- User profile
+  - Right now register only needs username, email and password.
+  - User can be asked to provide more profile details later.
 
 
 Summary
@@ -331,7 +423,7 @@ Author
 
 X. Chen  
 Created On: August 21, 2015  
-Last Modified: August 26, 2015  
+Last Modified: August 27, 2015  
 
 
 References
@@ -350,9 +442,12 @@ References
 [11] http://stackoverflow.com/questions/8413560/wordpress-add-custom-roles-as-well-as-remove-default-roles  
 [12] http://www.wpmayor.com/roles-capabilities-wordpress/   
 [13] http://codex.wordpress.org/Theme_Development  
-[14] https://wordpress.org/plugins/miniorange-login-openid/  
-[15] http://stackoverflow.com/questions/507138/how-do-i-add-a-class-to-a-given-element  
-[16] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page  
-[17] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet  
+[14] https://wordpress.org/plugins/miniorange-login-openid/   
+[15] http://stackoverflow.com/questions/507138/how-do-i-add-a-class-to-a-given-element   
+[16] http://wordpress.org/support/topic/moving-wordpress-to-another-folder   
+[17] http://jiathis.com/   
+[18] http://wordpress.stackexchange.com/questions/15304/how-to-change-the-default-registration-email-plugin-and-or-non-plugin   
+[19] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page   
+[20] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet   
 
 
