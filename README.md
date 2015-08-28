@@ -285,8 +285,8 @@ Or you could add the classes in pure javascript [15]:
 ```
 
 
-Miscellaneous Stuff
-===================
+Misc Stuff
+==========
 
 - WordPress configurations are in: /wp-config.php
   - from here you can get database name/user/password etc.
@@ -360,17 +360,27 @@ Miscellaneous Stuff
   Say you are using the twenty twelve theme, just edit this file: /wp-content/themes/twentytwelve/footer.php
 Add the script before the close body tag. That's all.
 
+- add custom menu
+  - One way is to modify /wp-content/themes/[theme]/header.php, and add custom menu here. 
+  - In theory you can do anything with the menu here.
+  - If using this menu, then you can disable WordPress menu.
+    - in dashboard, Appearance -> Menus -> Menu Structure, and click on "Delete Menu".
+  
+
 
 Future work
 ===========
 
-More considerations can include:
+More considerations:
 
+- Use of multi-level menu.
+  - One way is in "Misc Stuff" above.
 - Use a "Login" link instead of "Member".
   - Issue: but then since the WordPress menu keeps the same after logged in, how to hide/change the "Login" text?
-- Use of multi-level menu.
-- Customize register email.
+  - If use custom menu as in "Misc Stuff" above, this is not a problem.
 - Hide Admin_bar, then how to provide custom nagivation alternative?
+  - If use custom menu as in "Misc Stuff" above, this is not a problem.
+- Customize register email.
 - How to allow social media register?
   - [14] seems to provide some clue, but needs more investigation.
 
