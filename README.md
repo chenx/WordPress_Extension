@@ -285,8 +285,8 @@ Or you could add the classes in pure javascript [15]:
 ```
 
 
-Miscellaneous Stuff about WordPress 
-===================================
+Miscellaneous Stuff
+===================
 
 - WordPress configurations are in: /wp-config.php
 - WordPress database tables are named as: wp_[random_key]_[table_name].
@@ -297,7 +297,7 @@ Miscellaneous Stuff about WordPress
 |-----------|------------------|--------------------------|----------|
 |       165 | theme_mods_albar |  (see below for value)   | yes      |
   
-- where option_value is like: a:2:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:7:"primary";i:2;s:9:"main-menu";i:2;}}
+  - where option_value is like: a:2:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:7:"primary";i:2;s:9:"main-menu";i:2;}}
  
 
 Future work
