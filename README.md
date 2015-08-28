@@ -342,6 +342,23 @@ Miscellaneous Stuff
   - For page layout, check page.php
   - For more about a theme, read README.txt
 
+- Move WordPress to another folder.
+
+  There is no need to backup entire site and move things. A simple, light-weight procedure is [16]:
+
+  1. Go to admin panel: Settings > General
+  2. Change the two URI addresses, click on "Save Changes". This will show an error page, but it's fine.
+  3. Open your SSH/FTP client (or other site admin tool) and move the WP folder
+  4. Now open your blog at the new location, go to Settings > General, click on "Save Changes".
+  5. Go to Settings > Permalinks, click on "Save Changes", this is supposed to recreate all .htaccess rules.
+
+- Add social media share function. 
+
+  The simple script to insert for the sharing panel can be obtained from [17]. It just needs to insert this script anywhere between the body tags in your site.
+
+  Say you are using the twenty twelve theme, just edit this file: /wp-content/themes/twentytwelve/footer.php
+Add the script before the close body tag. That's all.
+
 
 Future work
 ===========
@@ -410,7 +427,9 @@ References
 [13] http://codex.wordpress.org/Theme_Development  
 [14] https://wordpress.org/plugins/miniorange-login-openid/  
 [15] http://stackoverflow.com/questions/507138/how-do-i-add-a-class-to-a-given-element  
-[16] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page  
-[17] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet  
+[16] http://wordpress.org/support/topic/moving-wordpress-to-another-folder
+[17] http://jiathis.com/
+[18] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page  
+[19] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet  
 
 
