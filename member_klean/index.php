@@ -16,14 +16,12 @@ get_header();
 }
 .site-branding {
     display: block;
-    /*border: 1px solid red;*/
 }
 #page {
     position: relative;
     float: right;
     margin-top:60px;
     width:75%;
-    /*border: 1px solid green;*/
 }
 */
 </style>
