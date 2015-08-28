@@ -26,7 +26,7 @@ get_header();
 */
 </style>
 
-<div id="primary" class="content-area col-lg-8 col-md-8 col-sm-12 col-xs-12" style="border: 0px solid red;">
+<div id="primary" class="content-area col-lg-8 col-md-8 col-sm-12 col-xs-12" style="border: 0px solid red; width: 100%">
 	<main id="main" class="site-main" role="main" style="border: 0px solid blue;">
 
 <article id="post-2" class="post-2 page type-page status-publish hentry">
@@ -58,7 +58,7 @@ else {
 </div> <!-- end primary -->
 
 <script type="text/javascript">
-    document.body.className += " page"; // page-id-2 page-template-default";
+    document.body.className += " page page-id-2 page-template-default";
 </script>
 
 <?php

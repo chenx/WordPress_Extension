@@ -4,5 +4,4 @@ README
 To disable sidebar in index.php:
 
 1) On line 79, comment out "get_sidebar();".
-2) It seems there is no easy way to make <main> span entire width. 
-   But <main> stays in page center so it's good.
+2) To make content span entire width, just add "style: width: 100%;" to <div id="primary">.
