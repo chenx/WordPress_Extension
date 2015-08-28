@@ -4,4 +4,6 @@ README
 To disable sidebar in index.php:
 
 1) On line 79, comment out "get_sidebar();".
-2) To make content span entire width, just add "style: width: 100%;" to <div id="primary">.
+2) To make content span entire width, just add "style='width: 100%;'" to <div id="primary"> on line 29.
+3) To use sidebar, just uncomment line 65 to enable: get_sidebar(),
+   and remove the "style='width: 100%;'" of <div id="primary"> on line 29. 
