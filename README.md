@@ -318,7 +318,11 @@ Miscellaneous Stuff
  |       165 | theme_mods_albar |  (see below for value)   | yes      |
   
   - where option_value is like: a:2:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:7:"primary";i:2;s:9:"main-menu";i:2;}}
- 
+
+- Users are stored in wp_users. 
+
+- User role is stored in wp_usermeta as wp_user_level, with a value from 0 to 10.
+
 
 Future work
 ===========
