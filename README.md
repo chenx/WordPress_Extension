@@ -360,7 +360,7 @@ Misc Stuff
   Say you are using the twenty twelve theme, just edit this file: /wp-content/themes/twentytwelve/footer.php
 Add the script before the close body tag. That's all.
 
-- add custom menu
+- Add custom menu
   - One way is to modify /wp-content/themes/[theme]/header.php, and add custom menu here. 
   - In theory you can do anything with the menu here.
   - If using this menu, then you can disable WordPress menu.
