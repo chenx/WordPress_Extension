@@ -290,12 +290,28 @@ Miscellaneous Stuff
 
 - WordPress configurations are in: /wp-config.php
 - WordPress database tables are named as: wp_[random_key]_[table_name].
+- WordPress tables include:
+
+ | Tables_in_wordpress (total 11)  |
+ |---------------------------------|
+ | wp_ahrf_commentmeta             |
+ | wp_ahrf_comments                |
+ | wp_ahrf_links                   |
+ | wp_ahrf_options                 |
+ | wp_ahrf_postmeta                |
+ | wp_ahrf_posts                   |
+ | wp_ahrf_term_relationships      |
+ | wp_ahrf_term_taxonomy           |
+ | wp_ahrf_terms                   |
+ | wp_ahrf_usermeta                |
+ | wp_ahrf_users                   |
+
 - WordPress options are stored in wp_[random_key]_options.
 - A theme is stored in wp_[random_key]_options like this:  
 
-| option_id | option_name      | option_value             | autoload |
-|-----------|------------------|--------------------------|----------|
-|       165 | theme_mods_albar |  (see below for value)   | yes      |
+ | option_id | option_name      | option_value             | autoload |
+ |-----------|------------------|--------------------------|----------|
+ |       165 | theme_mods_albar |  (see below for value)   | yes      |
   
   - where option_value is like: a:2:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:7:"primary";i:2;s:9:"main-menu";i:2;}}
  
