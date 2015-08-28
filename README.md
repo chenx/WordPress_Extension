@@ -366,7 +366,7 @@ Add the script before the close body tag. That's all.
   - If using this menu, then you can disable WordPress menu.
     - in dashboard, Appearance -> Menus -> Menu Structure, and click on "Delete Menu".
 
-- Customize user register confirmation email
+- Customize user register email
   - can change /wordpress/wp-includes/pluggable.php function wp_new_user_notification(). See [18].
   - for multiple site, seems should use: wpmu_signup_user_notification [18]
   - there are also some plugins to customize email format, like in nice html format.
@@ -387,7 +387,9 @@ More considerations:
   - If use custom menu as in "Misc Stuff" above, this is not a problem.
 - How to allow social media register?
   - [14] seems to provide some clue, but needs more investigation.
-
+- User profile
+  - Right now register only needs username, email and password.
+  - User can be asked to provide more profile details later.
 
 
 Summary
@@ -421,7 +423,7 @@ Author
 
 X. Chen  
 Created On: August 21, 2015  
-Last Modified: August 26, 2015  
+Last Modified: August 27, 2015  
 
 
 References
