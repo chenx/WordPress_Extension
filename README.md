@@ -319,9 +319,22 @@ Miscellaneous Stuff
   
   - where option_value is like: a:2:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:7:"primary";i:2;s:9:"main-menu";i:2;}}
 
+- wp_options rows relevant to theme are:
+
+ | option_name                   |
+ |-------------------------------|
+ | template                      |
+ | stylesheet                    |
+ | _site_transient_theme_roots   |
+ | current_theme                 |
+ | _site_transient_update_themes |
+
+  - template, sytelsheet and current_theme values are the name of the current theme.
+
 - Users are stored in wp_users. 
 
 - User role is stored in wp_usermeta as wp_user_level, with a value from 0 to 10.
+  - Another relevant field is in table wp_options: wp_options.wp_user_roles
 
 
 Future work
