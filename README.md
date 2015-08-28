@@ -444,8 +444,8 @@ References
 [15] http://stackoverflow.com/questions/507138/how-do-i-add-a-class-to-a-given-element   
 [16] http://wordpress.org/support/topic/moving-wordpress-to-another-folder   
 [17] http://jiathis.com/   
-[18] http://wordpress.stackexchange.com/questions/15304/how-to-change-the-default-registration-email-plugin-and-or-non-plugin
-[18] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page  
-[19] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet  
+[18] http://wordpress.stackexchange.com/questions/15304/how-to-change-the-default-registration-email-plugin-and-or-non-plugin   
+[19] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page   
+[20] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet   
 
 
