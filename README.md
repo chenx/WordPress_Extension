@@ -289,6 +289,7 @@ Miscellaneous Stuff
 ===================
 
 - WordPress configurations are in: /wp-config.php
+  - from here you can get database name/user/password etc.
 
 - WordPress database tables are named as: wp_[table_name].
   - it could be like wp_[key]_[table_name], e.g., on a bluehost installation.
