@@ -4,11 +4,11 @@ Extension to customize WordPress as website framework.
 About
 =====
 
-WordPress is a popular blogging software. It has a lot of nice-looking themes. If it can be used as website framework, then we can instantly make use of it abundant themes and avoid doing a lot of user interface work.
+WordPress is a popular blogging software. It has a lot of nice-looking themes. If it can be used as website framework, then we can instantly take advantage of its versatile themes.
 
-This project aims to extend WordPress as a general website framework. It reuses WordPress's membership/login system, role system, and themes. It then provides logged-in user page templates for different themes. Logged-in user page templates use current theme's header and footer, get logged-in user's identity and profile from WordPress built-in API, thus allow creating any custom pages and functions.
+This project aims to extend WordPress as a general website framework in a non-invasive way. It reuses WordPress's membership/login system, role system, and themes. It provides member (logged-in user) page templates for different themes. Member page templates use current theme's header and footer, get member's identity and profile from WordPress's built-in API, thus allowing the creation of any custom functions.
 
-This project is based on WordPress version 4.3.
+This project is developed under WordPress 4.3.
 
 
 Issues to address
@@ -111,7 +111,7 @@ function showUserInfo() {
 
 This is easily done by including functions get_header() and get_footer().
 
-Thus a minimal complete page template is:
+Thus a minimal page template is:
 
 ```php
 <?php
@@ -119,7 +119,6 @@ $SITE_ROOT = ".."; // change this accordingly.
 
 require("$SITE_ROOT/wp-load.php");
 get_header();
-
 
 if (is_user_logged_in()){
     echo "<p>Welcome, registered user!</p>";
@@ -130,7 +129,6 @@ else {
     echo "<a href='$SITE_ROOT/wp-login.php'>Login</a>";
     echo " | <a href='$SITE_ROOT/wp-login.php?action=register'>Register</a>";
 };
-
 
 get_footer();
 
@@ -192,7 +190,7 @@ Note that if you do not use sidebar, the content div may not span the entire pag
 
 The Admin_bar (Toolbar) is a dark bar at the top of page, which provides nagivation to WordPress functions (Site dashboard and navigation, post functions etc.) and current user functions (links to profile, logout). It is independent from themes, and is built-in WordPress. 
 
-For me, since a custom page does not need many of WordPress' build in functions, I extracted the Admin_bar's source code, modified it and stored it in theme template folders. That is the admin_bar.php file in this project's templates.
+For me, since a custom page does not need many of WordPress' built in functions, I extracted the Admin_bar's source code, modified it and stored it in theme template folders. That is the admin_bar.php file in this project's templates.
 admin_bar.php is included in the index.php template file.
 
 The Admin_bar will appear on every page one the user is logged in. If you have your customized navigation, and do not want Admin_bar, you can disable it and make it disappear by this:
@@ -226,13 +224,15 @@ Or you can hardcode it in html as:
 <a href="/wp-login.php?redirect_to=member_albar">Login</a>
 ```
 
-### 6) Disable "Comments" on a WordPress blog page.
+### 6) Disable "Comment" on a WordPress blog page.
 
 If you use a WordPress blog post as "About" or similar page, you can disable the page's comment function by:
 
 On Edit Page, click Screen Options and check the Discussion box. Then in Discussion section, uncheck "Allow comments". 
 
-### 7) To customize default user registeration email, see [4]. 
+### 7) Customize user register confirmation email.
+
+See [4]. 
 
 
 Implementation: Create new templates
@@ -269,6 +269,18 @@ $(document).ready(function() {
     $('body').addClass('page-id-2');
     $('body').addClass('page-template-default');
 });
+</script>
+```
+
+Or you could add the classes in pure javascript [15]:
+
+```html
+<script type="text/javascript">
+    document.body.className += " page page-id-2 page-template-default";
+    // or this:
+    // document.body.classList.add("page");
+    // document.body.classList.add("page-id-2");
+    // document.body.classList.add("page-template-default");
 </script>
 ```
 
@@ -338,8 +350,9 @@ References
 [11] http://stackoverflow.com/questions/8413560/wordpress-add-custom-roles-as-well-as-remove-default-roles  
 [12] http://www.wpmayor.com/roles-capabilities-wordpress/   
 [13] http://codex.wordpress.org/Theme_Development  
-[14] https://wordpress.org/plugins/miniorange-login-openid/
-[14] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page  
-[15] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+[14] https://wordpress.org/plugins/miniorange-login-openid/  
+[15] http://stackoverflow.com/questions/507138/how-do-i-add-a-class-to-a-given-element  
+[16] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page  
+[17] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet  
 
 
