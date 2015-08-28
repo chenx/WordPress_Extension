@@ -59,11 +59,8 @@ else {
     </main> <!-- end site-main -->
 </div> <!-- end primary -->
 
-<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
-    $('body').addClass('page');
-});
+    document.body.className += " page"; // page-id-2 page-template-default";
 </script>
 
 <?php
