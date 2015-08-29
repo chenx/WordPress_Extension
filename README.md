@@ -108,6 +108,7 @@ function showUserInfo() {
 ```
 
 3) Use WordPress theme in custom page.
+--------------------------------------
 
 This is easily done by including functions get_header() and get_footer().
 
