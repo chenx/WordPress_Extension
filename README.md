@@ -372,6 +372,7 @@ Add the script before the close body tag. That's all.
   - for multiple site, seems should use: wpmu_signup_user_notification [18]
   - there are also some plugins to customize email format, like in nice html format.
   
+- Popular WordPress plugins. See [19].
 
 
 Future work
@@ -448,7 +449,8 @@ References
 [16] http://wordpress.org/support/topic/moving-wordpress-to-another-folder   
 [17] http://jiathis.com/   
 [18] http://wordpress.stackexchange.com/questions/15304/how-to-change-the-default-registration-email-plugin-and-or-non-plugin   
-[19] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page   
-[20] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet   
+[19] http://www.webnethosting.net/top-10-recommended-and-must-have-wordpress-plugins/   
+[20] https://www.google.com/search?q=use+wordpress+as+cms&ie=utf-8&oe=utf-8#q=wordpress+custom+php+page   
+[21] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet   
 
 
