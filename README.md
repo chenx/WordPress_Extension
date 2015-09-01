@@ -380,6 +380,12 @@ Add the script before the close body tag. That's all.
 - Popular WordPress plugins. See [19].
 
 
+WordPress bugs
+==============
+
+- In admin dashboard "Comments" page, click on "Screen Options" on upper right corner, "Number of items per page" can be as high as 999. But then if you try to apply a "Bulk Action", it's report error: "Request-URI Too Large: The requested URL's length exceeds the capacity limit for this server".
+
+
 Future work
 ===========
 
