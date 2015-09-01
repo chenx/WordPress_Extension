@@ -271,7 +271,7 @@ hideMemLink();
 
 Just include this at the end of /wp-content/themes/[theme]/footer.php, then every page will do this check.
 
-Note when you do this, the login url will be the default one of WordPress, might be on the sidebar's Meta category. The default page after login will be dashboard. If you want the default redirect page be member's homepage, you can modify file /wp-includes/general-template.php, in function wp_login_url(), change 
+Note when you do this, the login url will be the default one of WordPress, might be in the sidebar's Meta category. The default page after login will be dashboard. If you want the default redirect page be member's homepage, you can modify file /wp-includes/general-template.php, in function wp_login_url(), change 
 
 ```php
 $login_url = site_url('wp-login.php', 'login');
@@ -280,7 +280,7 @@ $login_url = site_url('wp-login.php', 'login');
 to
 
 ```php
-$login_url = site_url('wp-login.php?&redirect_to=member_klean', 'login');
+$login_url = site_url('wp-login.php?&redirect_to=[member_homepage_url]', 'login');
 ```
 
 
