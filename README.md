@@ -236,6 +236,11 @@ On Edit Page, click Screen Options and check the Discussion box. Then in Discuss
 See [4]. 
 
 
+### 8) Captcha
+
+There are many Captcha plugins. "<a href="https://wordpress.org/support/view/plugin-reviews/goodbye-captcha">Goodbye Captcha</a>" seems to be a good one, which avoids spam but does not really use any captcha image, thus making the interface more clean.
+
+
 Implementation: Create new templates
 ====================================
 
