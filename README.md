@@ -241,6 +241,37 @@ See [4].
 There are many Captcha plugins. "<a href="https://wordpress.org/support/view/plugin-reviews/goodbye-captcha">Goodbye Captcha</a>" seems to be a good one, which avoids spam but does not really use any captcha image, thus making the interface more clean.
 
 
+### 9) Hide "Member" menu link if user is not logged in.
+
+Of course you can dig into wordpress code and don't emit the "Member" link when the user is not logged in.
+
+Another easy approach is to hide it using javascript like this:
+
+```php
+<?php if (! is_user_logged_in()) { ?>
+<script type="text/javascript">
+function hideMemLink() {
+    var menu = document.getElementById('menu-menu-1'); // Use the enclosing div's id accordingly.
+    if (menu === null) return;
+
+    var nodes = menu.getElementsByTagName('li');
+    for (var i = 0, n = nodes.length; i < n; ++ i) {
+        var item = nodes[i];
+        if (item.innerHTML.indexOf('Member') > 0) {
+            item.style.display = 'none';
+            break;
+        }
+    }
+}
+
+hideMemLink();
+</script>
+<?php } ?>
+```
+
+Just include this at the end of /wp-content/themes/[theme]/footer.php, then every page will do this check.
+
+
 Implementation: Create new templates
 ====================================
 
