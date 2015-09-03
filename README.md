@@ -307,7 +307,7 @@ function wp_head() {
 To insert custom header to head section, you can define $custom_header and add to the top of function wp_head():
 
 ```php
-$custom_header = '<script type="text/javascript" src="../js/ajax/libs/jquery/1.4/jquery.min.js"></script>';
+$custom_header = '<script type="text/javascript" src="../js/jquery.min.js"></script>';
 ```
 
 ```php
@@ -324,6 +324,41 @@ function wp_head() {
          * @since 1.5.0
          */
         do_action( 'wp_head' );
+}
+```
+
+
+### 11) Customize footer
+
+Similar to header, custom footer can be added to wp_footer(), which is defined in /wp-includes/general-template.php.
+
+```php
+function wp_footer() {
+        /**
+         * Print scripts or data before the closing body tag on the front end.
+         *
+         * @since 1.5.1
+         */
+        do_action( 'wp_footer' );
+}
+```
+
+Define and add $custom_footer below, which will be right before the &lt;/body&gt; tag.
+
+```
+function wp_footer() {
+        /**
+         * Print scripts or data before the closing body tag on the front end.
+         *
+         * @since 1.5.1
+         */
+        do_action( 'wp_footer' );
+
+        /**
+         * For custom code.
+         */
+        global $custom_footer;
+        if ( isset($custom_footer) ) { print $custom_footer; }
 }
 ```
 
