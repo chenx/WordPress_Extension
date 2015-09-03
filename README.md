@@ -283,6 +283,50 @@ to
 $login_url = site_url('wp-login.php?&redirect_to=[member_homepage_url]', 'login');
 ```
 
+### 10) Customize header
+
+Function get_header() is in /wp-includes/general-template.php,  
+which includes: wp-includes/theme-compat/header.php,  
+which calls wp_head() in turn.  
+Function wp_head() is in /wp-includes/general-template.php, and calls  do_action( 'wp_head' );  
+do_action() is in /wp-includes/plugin.php, which then is hard to trace.  
+
+Function wp_head() is defined as:
+
+```php
+function wp_head() {
+        /**
+         * Print scripts or data in the head tag on the front end.
+         *
+         * @since 1.5.0
+         */
+        do_action( 'wp_head' );
+}
+```
+
+To insert custom header to head section, you can define $custom_header and add to the top of function wp_head():
+
+```php
+$custom_header = '<script type="text/javascript" src="../js/ajax/libs/jquery/1.4/jquery.min.js"></script>';
+```
+
+```php
+function wp_head() {
+        /**
+         * For custom code.
+         */
+        global $custom_header;
+        if ( isset($custom_header) ) { print $custom_header; }
+
+        /**
+         * Print scripts or data in the head tag on the front end.
+         *
+         * @since 1.5.0
+         */
+        do_action( 'wp_head' );
+}
+```
+
 
 Implementation: Create new templates
 ====================================
