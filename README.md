@@ -345,7 +345,7 @@ function wp_footer() {
 
 Define and add $custom_footer below, which will be right before the &lt;/body&gt; tag.
 
-```
+```php
 function wp_footer() {
         /**
          * Print scripts or data before the closing body tag on the front end.
