@@ -283,11 +283,97 @@ to
 $login_url = site_url('wp-login.php?&redirect_to=[member_homepage_url]', 'login');
 ```
 
+<<<<<<< HEAD
 ### 10) CSS styles
 
 Albar has a default "vertical-align: baseline;" css setting in style.css. This causes
 much trouble in display, especially for floating elements in table. 
 This can be overriden by:
+=======
+### 10) Customize header
+
+Function get_header() is in /wp-includes/general-template.php,  
+which includes: wp-includes/theme-compat/header.php,  
+which calls wp_head() in turn.  
+Function wp_head() is in /wp-includes/general-template.php, and calls  do_action( 'wp_head' );  
+do_action() is in /wp-includes/plugin.php, which then is hard to trace.  
+
+Function wp_head() is defined as:
+
+```php
+function wp_head() {
+        /**
+         * Print scripts or data in the head tag on the front end.
+         *
+         * @since 1.5.0
+         */
+        do_action( 'wp_head' );
+}
+```
+
+To insert custom header to head section, you can define $custom_header and add to the top of function wp_head():
+
+```php
+$custom_header = '<script type="text/javascript" src="../js/jquery.min.js"></script>';
+```
+
+```php
+function wp_head() {
+        /**
+         * For custom code.
+         */
+        global $custom_header;
+        if ( isset($custom_header) ) { print $custom_header; }
+
+        /**
+         * Print scripts or data in the head tag on the front end.
+         *
+         * @since 1.5.0
+         */
+        do_action( 'wp_head' );
+}
+```
+
+
+### 11) Customize footer
+
+Similar to header, custom footer can be added to wp_footer(), which is defined in /wp-includes/general-template.php.
+
+```php
+function wp_footer() {
+        /**
+         * Print scripts or data before the closing body tag on the front end.
+         *
+         * @since 1.5.1
+         */
+        do_action( 'wp_footer' );
+}
+```
+
+Define and add $custom_footer below, which will be right before the &lt;/body&gt; tag.
+
+```php
+function wp_footer() {
+        /**
+         * Print scripts or data before the closing body tag on the front end.
+         *
+         * @since 1.5.1
+         */
+        do_action( 'wp_footer' );
+
+        /**
+         * For custom code.
+         */
+        global $custom_footer;
+        if ( isset($custom_footer) ) { print $custom_footer; }
+}
+```
+
+
+### 12) Customize footer
+
+Albar has a default "vertical-align: baseline;" css setting in style.css. This causes much trouble in display, especially for floating elements in table. This can be overriden by:
+>>>>>>> b52216c14909e51a6b02ce7e3a9a66a4ce2453b3
 
 ```css
 td  { vertical-align: middle !important; }
