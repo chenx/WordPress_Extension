@@ -283,6 +283,40 @@ to
 $login_url = site_url('wp-login.php?&redirect_to=[member_homepage_url]', 'login');
 ```
 
+### 10) CSS styles
+
+Albar has a default "vertical-align: baseline;" css setting in style.css. This causes
+much trouble in display, especially for floating elements in table. 
+This can be overriden by:
+
+```css
+td  { vertical-align: middle !important; }
+```
+
+Font size of entire page can be similarly overriden:
+
+```css
+table, td, body { font-size: 12px !important; }
+```
+
+For table cellspacing: "&lt;table cellspacing=2&gt;", CSS equivalent is (see http://stackoverflow.com/questions/339923/set-cellpadding-and-cellspacing-in-css):
+
+```css
+table { 
+    border-spacing: 2px;
+    border-collapse: separate;
+}
+```
+
+In Albar theme, hyperlinks have no text-decoration. Assume all you links are in table, then hyperlink format can be recovered by:
+
+```css
+table a {
+    color: blue !important;
+    text-decoration: underline !important;
+}
+```
+
 
 Implementation: Create new templates
 ====================================
