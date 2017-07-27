@@ -283,13 +283,7 @@ to
 $login_url = site_url('wp-login.php?&redirect_to=[member_homepage_url]', 'login');
 ```
 
-<<<<<<< HEAD
-### 10) CSS styles
 
-Albar has a default "vertical-align: baseline;" css setting in style.css. This causes
-much trouble in display, especially for floating elements in table. 
-This can be overriden by:
-=======
 ### 10) Customize header
 
 Function get_header() is in /wp-includes/general-template.php,  
@@ -370,10 +364,9 @@ function wp_footer() {
 ```
 
 
-### 12) Customize footer
+### 12) CSS Styles
 
 Albar has a default "vertical-align: baseline;" css setting in style.css. This causes much trouble in display, especially for floating elements in table. This can be overriden by:
->>>>>>> b52216c14909e51a6b02ce7e3a9a66a4ce2453b3
 
 ```css
 td  { vertical-align: middle !important; }
